@@ -11,7 +11,6 @@ commit_id_with_hosts=$(git log -1 --all --format=%H hosts_all_server)
 
 for branches in $all_branches; do
     if [[ $branches =~ ^main-* ]] ; then
-        # echo $branches
         git checkout $branches
         git pull --all --no-edit
         git cherry-pick $commit_id_with_hosts
